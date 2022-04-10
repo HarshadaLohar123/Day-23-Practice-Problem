@@ -27,7 +27,7 @@ namespace AddressBook
                 Console.WriteLine("Enter 2 for Display");
                 Console.WriteLine("Enter 3 to search the person's by city");
                 Console.WriteLine("Enter 4 to search the person's by State");
-                int choice = int.Parse(Console.ReadLine()); // here i am converting into int
+                int choice = int.Parse(Console.ReadLine()); // here i am converting into int.
 
                 switch (choice)// checking
                 {
