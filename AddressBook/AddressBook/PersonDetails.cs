@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AddressBook
 {
-    public class PersonDetails
+    public class PersonsDetails
     {
         List<Contacts> records = new List<Contacts>(); // using list
 
@@ -71,5 +71,50 @@ namespace AddressBook
             }
         }
 
+        public void CheckPersonsNameByCity()  //Serch the person by city name
+        {
+            Console.WriteLine("Enter the city Name to find person ");
+            string personcity = Console.ReadLine();
+            List<Contacts> contacts = records.FindAll(x => (x.city == personcity));
+
+            if (contacts.Count == 0)             //Checking person name
+            {
+                Console.WriteLine("No person found in that City");
+            }
+            else
+            {
+                Console.WriteLine("Person details are: ");
+                foreach (Contacts contact in contacts)
+                {
+                    Console.WriteLine("\nFirst name is: " + contact.firstName);
+                    Console.WriteLine("Last name is: " + contact.lastName);
+                    Console.WriteLine("City : " + contact.city);
+                }
+            }
+        }
+
+        public void CheckPersonNameByState()   //Search the person by State name
+        {
+
+            Console.WriteLine("Please enter the State to find person name: ");
+            string Personstate = Console.ReadLine();
+            List<Contacts> contacts1 = records.FindAll(y => (y.state == Personstate));
+
+            if (contacts1.Count == 0)  //Checking the person name
+            {
+                Console.WriteLine("No person found in that state");
+            }
+            else
+            {
+                Console.WriteLine("Person details are: ");
+                foreach (Contacts contact in contacts1)
+                {
+                    Console.WriteLine("\nFirst name is: " + contact.firstName);
+                    Console.WriteLine("Last name is: " + contact.lastName);
+                    Console.WriteLine("State : " + contact.state);
+                }
+            }
+        }
     }
+
 }

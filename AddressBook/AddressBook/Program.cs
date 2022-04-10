@@ -20,11 +20,13 @@ namespace AddressBook
         {
             Console.WriteLine("Welcome to the Address book problem");
 
-            PersonDetails records = new PersonDetails();
+            PersonsDetails records = new PersonsDetails();
             while (true) // It will iterate infinite loop.
             {
                 Console.WriteLine("\nEnter 1 to Add persons details");
                 Console.WriteLine("Enter 2 for Display");
+                Console.WriteLine("Enter 3 to search the person's by city");
+                Console.WriteLine("Enter 4 to search the person's by State");
                 int choice = int.Parse(Console.ReadLine()); // here i am converting into int
 
                 switch (choice)
@@ -35,8 +37,14 @@ namespace AddressBook
                     case 2:
                         records.DetailsOfPerson();
                         break;
+                    case 3:
+                        records.CheckPersonsNameByCity();
+                        break;
+                    case 4:
+                        records.CheckPersonNameByState();
+                        break;
                     default:
-                        Console.WriteLine("Please select valid input");
+                        Console.WriteLine("Pleasee select valid input");
                         break;
 
                 }
